@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff9f5"/>
+      <stop offset="100%" stop-color="#f0e4d8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <ellipse cx="400" cy="360" rx="240" ry="55" fill="#f5ebe0" stroke="#c45c6a" stroke-width="3"/>
+  <ellipse cx="400" cy="340" rx="200" ry="45" fill="#fffaf5" stroke="#d4c4b0" stroke-width="2"/>
+  <circle cx="320" cy="330" r="14" fill="#c45c6a" opacity="0.5"/>
+  <circle cx="400" cy="320" r="12" fill="#e8a0a8" opacity="0.5"/>
+  <circle cx="480" cy="335" r="13" fill="#d4a574" opacity="0.5"/>
+  <text x="400" y="560" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#8a7268">Итальянский пирог</text>
+</svg>

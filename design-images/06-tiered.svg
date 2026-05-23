@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#fffbf7"/>
+  <ellipse cx="400" cy="450" rx="240" ry="72" fill="#ecdcc8" stroke="#b8866f" stroke-width="3"/>
+  <ellipse cx="400" cy="340" rx="160" ry="52" fill="#f5ebe0" stroke="#c4a882" stroke-width="2"/>
+  <ellipse cx="400" cy="240" rx="95" ry="36" fill="#ffffff" stroke="#b8866f" stroke-width="2"/>
+  <circle cx="400" cy="175" r="12" fill="#d4af37"/>
+  <text x="400" y="560" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" fill="#6b5344">20 O@CA0</text>
+</svg>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Свадебные торты Kisura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=9">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge hero-badge--brand">Kisura</span>
+      <h1>Свадебные торты</h1>
+      <p class="hero-lead">Выберите начинку и вес — приготовим торт к дате вашего торжества</p>
+    </div>
+    <div class="hero-glow" aria-hidden="true"></div>
+  </header>
+
+  <main class="container" lang="ru">
+    <section class="toolbar" aria-label="Поиск и сортировка">
+      <input id="searchInput" type="text" placeholder="Поиск: шоколад, ягоды, чизкейк...">
+      <select id="sortSelect">
+        <option value="default">По умолчанию</option>
+        <option value="price-asc">Цена: по возрастанию</option>
+        <option value="price-desc">Цена: по убыванию</option>
+        <option value="name-asc">Название: А-Я</option>
+      </select>
+    </section>
+
+    <section class="catalog-section" aria-labelledby="catalog-heading">
+      <div class="section-head">
+        <h2 id="catalog-heading">Каталог</h2>
+        <p class="section-sub">Цены указаны за килограмм</p>
+      </div>
+      <p id="metaText" class="meta"></p>
+      <div id="cakeGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <script src="./app.js?v=33"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>&#1042;&#1099;&#1073;&#1086;&#1088; &#1076;&#1080;&#1079;&#1072;&#1081;&#1085;&#1072; &#8212; kisura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=9">
+</head>
+<body class="page-design">
+  <header class="design-header">
+    <a class="back-link" href="./index.html">&#8592; &#1050; &#1082;&#1072;&#1090;&#1072;&#1083;&#1086;&#1075;&#1091;</a>
+    <span class="hero-badge">kisura</span>
+    <h1>&#1042;&#1099;&#1073;&#1086;&#1088; &#1076;&#1080;&#1079;&#1072;&#1081;&#1085;&#1072;</h1>
+    <p class="hero-lead design-intro">&#1054;&#1092;&#1086;&#1088;&#1084;&#1083;&#1077;&#1085;&#1080;&#1077; &#1090;&#1086;&#1088;&#1090;&#1072; &#8212; &#1087;&#1086;&#1076;&#1073;&#1077;&#1088;&#1080;&#1090;&#1077; &#1089;&#1090;&#1080;&#1083;&#1100; &#1076;&#1083;&#1103; &#1074;&#1072;&#1096;&#1077;&#1075;&#1086; &#1090;&#1086;&#1088;&#1078;&#1077;&#1089;&#1090;&#1074;&#1072;</p>
+  </header>
+
+  <main class="container design-main">
+    <section id="cakeSummary" class="order-summary" aria-live="polite" hidden></section>
+
+    <section id="designError" class="design-error" hidden>
+      <p>&#1058;&#1086;&#1088;&#1090; &#1085;&#1077; &#1085;&#1072;&#1081;&#1076;&#1077;&#1085;. &#1042;&#1077;&#1088;&#1085;&#1080;&#1090;&#1077;&#1089;&#1100; &#1074; <a href="./index.html">&#1082;&#1072;&#1090;&#1072;&#1083;&#1086;&#1075;</a> &#1080; &#1074;&#1099;&#1073;&#1077;&#1088;&#1080;&#1090;&#1077; &#1087;&#1086;&#1079;&#1080;&#1094;&#1080;&#1102; &#1089;&#1085;&#1086;&#1074;&#1072;.</p>
+    </section>
+
+    <section id="designSection" class="design-section" aria-labelledby="design-heading" hidden>
+      <div class="section-head">
+        <h2 id="design-heading">&#1057;&#1090;&#1080;&#1083;&#1100; &#1086;&#1092;&#1086;&#1088;&#1084;&#1083;&#1077;&#1085;&#1080;&#1103;</h2>
+        <p class="section-sub">&#1052;&#1086;&#1078;&#1085;&#1086; &#1080;&#1079;&#1084;&#1077;&#1085;&#1080;&#1090;&#1100; &#1087;&#1088;&#1080; &#1089;&#1086;&#1075;&#1083;&#1072;&#1089;&#1086;&#1074;&#1072;&#1085;&#1080;&#1080; &#1089; &#1082;&#1086;&#1085;&#1076;&#1080;&#1090;&#1077;&#1088;&#1086;&#1084;</p>
+      </div>
+
+      <div id="designGrid" class="grid design-grid" role="radiogroup" aria-label="&#1042;&#1072;&#1088;&#1080;&#1072;&#1085;&#1090;&#1099; &#1076;&#1080;&#1079;&#1072;&#1081;&#1085;&#1072; &#1090;&#1086;&#1088;&#1090;&#1072;"></div>
+
+      <div class="design-actions">
+        <button id="continueBtn" type="button" class="design-continue" disabled>&#1055;&#1088;&#1086;&#1076;&#1086;&#1083;&#1078;&#1080;&#1090;&#1100;</button>
+      </div>
+
+      <p id="designToast" class="design-toast" role="status" aria-live="polite" hidden></p>
+    </section>
+  </main>
+
+  <script src="./app.js?v=33"></script>
+</body>
+</html>

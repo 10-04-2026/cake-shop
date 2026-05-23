@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="fl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff8fb"/>
+      <stop offset="100%" stop-color="#fce8ef"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#fl)"/>
+  <ellipse cx="400" cy="400" rx="200" ry="62" fill="#ffffff" stroke="#f8c8d8" stroke-width="3"/>
+  <ellipse cx="400" cy="300" rx="150" ry="48" fill="#fff5f9" stroke="#e8b4c8" stroke-width="2"/>
+  <circle cx="340" cy="240" r="22" fill="#f8c8d8" stroke="#e85a8a" stroke-width="2"/>
+  <circle cx="400" cy="220" r="26" fill="#ffb6c8" stroke="#d94a6a" stroke-width="2"/>
+  <circle cx="460" cy="242" r="22" fill="#f8c8d8" stroke="#e85a8a" stroke-width="2"/>
+  <ellipse cx="400" cy="265" rx="90" ry="25" fill="#7aab68" opacity="0.35"/>
+  <text x="400" y="560" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" fill="#8a5a6a">&25BK</text>
+</svg>

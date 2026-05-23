@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#f2ebe4"/>
+  <ellipse cx="400" cy="410" rx="210" ry="65" fill="#d4c4b0" stroke="#8b7355" stroke-width="3"/>
+  <ellipse cx="400" cy="310" rx="165" ry="52" fill="#e8ddd4" stroke="#6b4c3b" stroke-width="2"/>
+  <circle cx="340" cy="265" r="14" fill="#8b1538"/>
+  <circle cx="400" cy="250" r="16" fill="#a01830"/>
+  <circle cx="460" cy="268" r="14" fill="#8b1538"/>
+  <circle cx="370" cy="295" r="10" fill="#6b1010"/>
+  <circle cx="430" cy="292" r="10" fill="#6b1010"/>
+  <text x="400" y="560" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" fill="#5c4033"> CAB8:</text>
+</svg>

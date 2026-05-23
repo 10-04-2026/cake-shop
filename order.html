@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>&#1054;&#1092;&#1086;&#1088;&#1084;&#1083;&#1077;&#1085;&#1080;&#1077; &#1079;&#1072;&#1082;&#1072;&#1079;&#1072; &#8212; kisura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=9">
+</head>
+<body class="page-order">
+  <header class="design-header">
+    <a id="backToDesign" class="back-link" href="./design.html">&#8592; &#1050; &#1074;&#1099;&#1073;&#1086;&#1088;&#1091; &#1076;&#1080;&#1079;&#1072;&#1081;&#1085;&#1072;</a>
+    <span class="hero-badge">kisura</span>
+    <h1>&#1054;&#1092;&#1086;&#1088;&#1084;&#1083;&#1077;&#1085;&#1080;&#1077; &#1079;&#1072;&#1082;&#1072;&#1079;&#1072;</h1>
+    <p class="hero-lead design-intro">&#1054;&#1089;&#1090;&#1072;&#1074;&#1100;&#1090;&#1077; &#1082;&#1086;&#1085;&#1090;&#1072;&#1082;&#1090;&#1099; &#8212; &#1084;&#1099; &#1089;&#1074;&#1103;&#1078;&#1077;&#1084;&#1089;&#1103; &#1076;&#1083;&#1103; &#1087;&#1086;&#1076;&#1090;&#1074;&#1077;&#1088;&#1078;&#1076;&#1077;&#1085;&#1080;&#1103;</p>
+  </header>
+
+  <main class="container design-main">
+    <section id="orderSummary" class="order-summary" hidden></section>
+
+    <section id="orderError" class="design-error" hidden>
+      <p>&#1047;&#1072;&#1082;&#1072;&#1079; &#1085;&#1077; &#1085;&#1072;&#1081;&#1076;&#1077;&#1085;. &#1042;&#1077;&#1088;&#1085;&#1080;&#1090;&#1077;&#1089;&#1100; &#1074; <a href="./index.html">&#1082;&#1072;&#1090;&#1072;&#1083;&#1086;&#1075;</a>.</p>
+    </section>
+
+    <section id="orderFormSection" class="order-form-section" hidden>
+      <form id="orderForm" class="order-form" novalidate>
+        <h2 class="order-form-title">&#1050;&#1086;&#1085;&#1090;&#1072;&#1082;&#1090;&#1085;&#1099;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077;</h2>
+
+        <label class="form-field">
+          <span class="form-label">&#1048;&#1084;&#1103; &#1080; &#1092;&#1072;&#1084;&#1080;&#1083;&#1080;&#1103; <span class="form-required">*</span></span>
+          <input type="text" id="customerName" name="name" autocomplete="name" required placeholder="&#1050;&#1072;&#1082; &#1082; &#1074;&#1072;&#1084; &#1086;&#1073;&#1088;&#1072;&#1097;&#1072;&#1090;&#1100;&#1089;&#1103;">
+        </label>
+
+        <label class="form-field">
+          <span class="form-label">&#1058;&#1077;&#1083;&#1077;&#1092;&#1086;&#1085; <span class="form-required">*</span></span>
+          <input type="tel" id="customerPhone" name="phone" autocomplete="tel" required placeholder="+374 00 000 000">
+        </label>
+
+        <label class="form-field">
+          <span class="form-label">Email</span>
+          <input type="email" id="customerEmail" name="email" autocomplete="email" placeholder="email@example.com">
+        </label>
+
+        <label class="form-field">
+          <span class="form-label">&#1042;&#1077;&#1089; &#1090;&#1086;&#1088;&#1090;&#1072; <span class="form-required">*</span></span>
+          <select id="orderWeight" name="weight" required aria-label="&#1042;&#1077;&#1089; &#1090;&#1086;&#1088;&#1090;&#1072; &#1074; &#1082;&#1075;"></select>
+        </label>
+
+        <label class="form-field">
+          <span class="form-label">&#1044;&#1072;&#1090;&#1072; &#1084;&#1077;&#1088;&#1086;&#1087;&#1088;&#1080;&#1103;&#1090;&#1080;&#1103; <span class="form-required">*</span></span>
+          <input type="date" id="eventDate" name="eventDate" required>
+        </label>
+
+        <label class="form-field">
+          <span class="form-label">&#1050;&#1086;&#1084;&#1084;&#1077;&#1085;&#1090;&#1072;&#1088;&#1080;&#1081; &#1082; &#1079;&#1072;&#1082;&#1072;&#1079;&#1091;</span>
+          <textarea id="orderComment" name="comment" rows="4" placeholder="&#1055;&#1086;&#1078;&#1077;&#1083;&#1072;&#1085;&#1080;&#1103; &#1087;&#1086; &#1090;&#1086;&#1088;&#1090;&#1091;, &#1074;&#1088;&#1077;&#1084;&#1103; &#1076;&#1086;&#1089;&#1090;&#1072;&#1074;&#1082;&#1080; &#1080; &#1090;.&#1076;."></textarea>
+        </label>
+
+        <p id="orderSendError" class="order-send-error" role="alert" hidden></p>
+        <button type="submit" class="design-continue order-submit">&#1054;&#1090;&#1087;&#1088;&#1072;&#1074;&#1080;&#1090;&#1100; &#1079;&#1072;&#1103;&#1074;&#1082;&#1091;</button>
+      </form>
+    </section>
+
+    <section id="orderSuccess" class="order-success" hidden>
+      <h2>&#1047;&#1072;&#1103;&#1074;&#1082;&#1072; &#1086;&#1090;&#1087;&#1088;&#1072;&#1074;&#1083;&#1077;&#1085;&#1072;</h2>
+      <p id="orderSuccessText"></p>
+      <a class="design-continue order-submit" href="./index.html" style="display:inline-block;text-align:center;text-decoration:none;">&#1042;&#1077;&#1088;&#1085;&#1091;&#1090;&#1100;&#1089;&#1103; &#1074; &#1082;&#1072;&#1090;&#1072;&#1083;&#1086;&#1075;</a>
+    </section>
+  </main>
+
+  <script src="./app.js?v=33"></script>
+</body>
+</html>
