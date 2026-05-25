@@ -182,7 +182,10 @@ class Handler(SimpleHTTPRequestHandler):
 
 
 def main() -> int:
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8080
+    if len(sys.argv) > 1:
+        port = int(sys.argv[1])
+    else:
+        port = int(os.environ.get("PORT", "8080"))
     server = ThreadingHTTPServer(("0.0.0.0", port), Handler)
     config = load_telegram_config()
     tg_status = "настроен" if config["bot_token"] and config["chat_id"] else "НЕ настроен (telegram.env)"
