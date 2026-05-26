@@ -705,6 +705,63 @@ button.card.design-card:focus-visible {
   line-height: 1.5;
 }
 
+.seo-block {
+  max-width: 36rem;
+  margin: 2.5rem auto 2rem;
+  padding: 1.5rem 1.25rem;
+  border-radius: var(--radius-card);
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+}
+
+.seo-block h2 {
+  margin: 1.25rem 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.seo-block h2:first-child {
+  margin-top: 0;
+}
+
+.seo-block p {
+  margin: 0 0 0.75rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-soft);
+}
+
+.seo-steps {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 1rem 2.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+.site-footer p {
+  margin: 0.35rem 0;
+}
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 700px) {
   .order-summary-inner {
     flex-direction: column;
