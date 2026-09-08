@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Прайс-лист — порционные десерты</title>
+  <title>Kisura — оптовый прайс порционных десертов</title>
   <style>
     @font-face {
       font-family: "Cormorant Garamond";
@@ -15,12 +15,6 @@
       src: url("fonts/CormorantGaramond-Italic.ttf");
       font-weight: 400;
       font-style: italic;
-    }
-    @font-face {
-      font-family: "Cormorant Garamond";
-      src: url("fonts/CormorantGaramond-Medium.ttf");
-      font-weight: 500;
-      font-style: normal;
     }
     @font-face {
       font-family: "Cormorant Garamond";
@@ -55,201 +49,256 @@
       font-weight: 700;
     }
 
-    @page {
-      size: A4 portrait;
-      margin: 0;
-    }
-
+    @page { size: A4 portrait; margin: 0; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html, body {
       width: 210mm;
       height: 297mm;
-      overflow: hidden;
     }
 
     body {
       font-family: "Manrope", sans-serif;
-      color: #241f1d;
+      color: #1f1a18;
       background:
-        radial-gradient(ellipse 85% 50% at 8% -5%, rgba(110, 55, 62, 0.11), transparent 58%),
-        radial-gradient(ellipse 65% 40% at 100% 5%, rgba(150, 155, 160, 0.16), transparent 52%),
-        linear-gradient(168deg, #f3f1ee 0%, #eae7e2 48%, #f1eeea 100%);
-      position: relative;
-    }
-
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: 0.35;
-      background-image:
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.45) 0 1px, transparent 1.5px),
-        radial-gradient(circle at 70% 60%, rgba(255,255,255,0.35) 0 1px, transparent 1.5px);
-      background-size: 12px 12px, 18px 18px;
-      pointer-events: none;
+        radial-gradient(ellipse 100% 50% at 50% -10%, rgba(122, 61, 68, 0.14), transparent 60%),
+        linear-gradient(168deg, #f6f3ef 0%, #ebe7e1 55%, #f3f0eb 100%);
     }
 
     .sheet {
-      position: relative;
-      z-index: 1;
+      width: 210mm;
       height: 297mm;
-      padding: 10mm 11mm 9mm;
-      display: flex;
-      flex-direction: column;
+      padding: 7mm 9mm 0;
+      position: relative;
     }
 
-    .header {
-      text-align: center;
-      margin-bottom: 5.5mm;
-      flex-shrink: 0;
-    }
+    .header { text-align: center; }
 
     .brand {
       font-family: "Cormorant Garamond", serif;
       font-weight: 700;
-      font-size: 34pt;
-      letter-spacing: 0.2em;
+      font-size: 32pt;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #1a1614;
-      line-height: 0.95;
+      color: #14110f;
+      line-height: 0.9;
     }
 
-    .eyebrow {
-      margin-top: 2.8mm;
-      font-size: 7.2pt;
+    .promise {
+      margin-top: 2mm;
+      font-family: "Cormorant Garamond", serif;
       font-weight: 600;
-      letter-spacing: 0.32em;
+      font-size: 14pt;
+      line-height: 1.15;
+      color: #1f1a18;
+    }
+
+    .promise em {
+      font-style: italic;
+      font-weight: 500;
+      color: #7a3d44;
+    }
+
+    .lead {
+      margin: 1.8mm auto 0;
+      max-width: 158mm;
+      font-size: 7.2pt;
+      line-height: 1.38;
+      color: #5f5751;
+      font-weight: 500;
+    }
+
+    .benefits {
+      margin-top: 3mm;
+      font-size: 6.4pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #7a3d44;
     }
 
-    .subtitle {
-      margin-top: 1.6mm;
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
-      font-size: 12pt;
-      color: #5a534e;
-    }
+    .benefits span { padding: 0 2.6mm; }
+    .benefits span + span { border-left: 0.5pt solid rgba(122, 61, 68, 0.35); }
 
     .rule {
-      width: 34mm;
-      height: 0.7pt;
+      width: 26mm;
+      height: 0.65pt;
       background: #7a3d44;
-      margin: 3.2mm auto 0;
-      opacity: 0.7;
+      margin: 2.4mm auto 3mm;
+      opacity: 0.65;
     }
 
-    .grid {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 6mm;
-      min-height: 0;
-    }
-
-    .row {
-      display: flex;
-      justify-content: center;
-      gap: 4.5mm;
-    }
-
-    .item {
-      width: 62mm;
-      text-align: center;
-    }
-
-    .photo-wrap {
-      width: 62mm;
-      height: 62mm;
-      overflow: hidden;
-      border-radius: 1.2mm;
-      box-shadow:
-        0 1.5mm 4mm rgba(26, 22, 20, 0.12),
-        0 0.4mm 1mm rgba(26, 22, 20, 0.06);
-      background: #d8d4cf;
-    }
-
-    .photo-wrap img {
+    table.catalog {
       width: 100%;
-      height: 100%;
+      border-collapse: separate;
+      border-spacing: 3mm 0;
+      table-layout: fixed;
+    }
+
+    td.item {
+      width: 33.33%;
+      vertical-align: top;
+      text-align: center;
+      padding-bottom: 2mm;
+    }
+
+    .photo {
+      width: 100%;
+      height: 58mm;
       object-fit: cover;
+      object-position: center 42%;
       display: block;
+      border-radius: 1mm;
+      box-shadow: 0 1.4mm 3.8mm rgba(20, 17, 15, 0.13);
+    }
+
+    .tag {
+      margin-top: 2.2mm;
+      font-size: 5.6pt;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #7a3d44;
     }
 
     .name {
-      margin-top: 3mm;
-      font-family: "Cormorant Garamond", serif;
-      font-weight: 600;
-      font-size: 13pt;
-      line-height: 1.12;
-      color: #1a1614;
-    }
-
-    .meta {
-      margin-top: 1.2mm;
-      font-size: 7.2pt;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      color: #6a625c;
-    }
-
-    .price {
-      margin-top: 1.5mm;
+      margin-top: 0.5mm;
       font-family: "Cormorant Garamond", serif;
       font-weight: 700;
-      font-size: 17pt;
-      color: #7a3d44;
-      letter-spacing: 0.02em;
+      font-size: 13pt;
+      line-height: 1.05;
+      color: #14110f;
     }
 
-    .buffet {
-      margin-top: 1mm;
-      font-size: 6.6pt;
-      line-height: 1.3;
-      color: #746b65;
+    .desc {
+      margin-top: 0.9mm;
+      font-size: 6.5pt;
+      line-height: 1.28;
+      color: #6a625c;
       font-weight: 500;
-      min-height: 8.5pt;
+      min-height: 16pt;
+      padding: 0 0.5mm;
     }
 
-    .footer {
-      margin-top: auto;
-      padding-top: 5mm;
-      border-top: 0.5pt solid rgba(26, 22, 20, 0.12);
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 8mm;
-    }
-
-    .note {
-      font-size: 6.8pt;
-      line-height: 1.45;
-      color: #6a625c;
-      max-width: 125mm;
-    }
-
-    .note strong {
-      color: #241f1d;
-      font-weight: 600;
-    }
-
-    .contact {
-      text-align: right;
-      font-size: 6.8pt;
-      color: #6a625c;
-      line-height: 1.4;
+    .price-line {
+      margin-top: 1.2mm;
       white-space: nowrap;
     }
 
-    .contact .label {
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-size: 6pt;
+    .weight {
+      font-size: 7pt;
+      font-weight: 500;
+      color: #6a625c;
+      margin-right: 2mm;
+    }
+
+    .price {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 700;
+      font-size: 16.5pt;
       color: #7a3d44;
+      line-height: 1;
+    }
+
+    .buffet {
+      margin-top: 1.1mm;
+      display: inline-block;
+      font-size: 6.3pt;
+      line-height: 1.2;
+      color: #4a3f3c;
+      font-weight: 600;
+      background: rgba(122, 61, 68, 0.09);
+      padding: 0.9mm 2mm;
+      border-radius: 0.5mm;
+    }
+
+    .mid {
+      margin: 0.5mm 3mm 2.5mm;
+      text-align: center;
+      padding: 2mm 3mm;
+      background: rgba(122, 61, 68, 0.07);
+      border-top: 0.4pt solid rgba(122, 61, 68, 0.16);
+      border-bottom: 0.4pt solid rgba(122, 61, 68, 0.16);
+      font-size: 6.8pt;
+      font-weight: 600;
+      color: #5c2e34;
+      line-height: 1.35;
+    }
+
+    .mid strong {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 9.2pt;
+      font-weight: 700;
+    }
+
+    .bottom-row {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 3mm 0;
+      table-layout: fixed;
+      margin-bottom: 0;
+    }
+
+    .bottom-row td.spacer { width: 16.66%; }
+    .bottom-row td.item { width: 33.33%; }
+
+    .cta {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(105deg, #5c2e34 0%, #7a3d44 50%, #6a353c 100%);
+      color: #f7f1ee;
+      padding: 5mm 12mm 5.2mm;
+    }
+
+    .cta-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .cta-table td { vertical-align: middle; }
+    .cta-table td.right { text-align: right; width: 42mm; }
+
+    .cta-title {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 700;
+      font-size: 12.8pt;
+      line-height: 1.15;
+    }
+
+    .cta-text {
+      margin-top: 1.1mm;
+      font-size: 6.5pt;
+      line-height: 1.38;
+      opacity: 0.88;
+      font-weight: 500;
+      max-width: 135mm;
+    }
+
+    .cta-label {
+      font-size: 5.8pt;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.75;
       margin-bottom: 0.8mm;
+    }
+
+    .cta-brand {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 700;
+      font-size: 13.5pt;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .cta-place {
+      margin-top: 0.9mm;
+      font-size: 6.6pt;
+      font-weight: 500;
+      opacity: 0.85;
     }
   </style>
 </head>
@@ -257,76 +306,87 @@
   <div class="sheet">
     <header class="header">
       <div class="brand">Kisura</div>
-      <div class="eyebrow">Оптовый прайс-лист</div>
-      <p class="subtitle">Порционные десерты для кафе и ресторанов</p>
-      <div class="rule" aria-hidden="true"></div>
+      <h1 class="promise">Десерты, которые <em>гости заказывают снова</em></h1>
+      <p class="lead">
+        Готовые порции для витрины кафе и ресторанов — стабильный вкус, аккуратная подача
+        и понятная себестоимость без нагрузки на вашу кухню.
+      </p>
+      <div class="benefits">
+        <span>Свежая выпечка</span><span>Готовые порции</span><span>Фуршетный формат</span><span>Оптовые поставки</span>
+      </div>
+      <div class="rule"></div>
     </header>
 
-    <main class="grid">
-      <div class="row">
-        <article class="item">
-          <div class="photo-wrap">
-            <img src="photos/cropped/01-basque-cheesecake.jpg" alt="Баскский чизкейк">
-          </div>
-          <h2 class="name">Баскский чизкейк</h2>
-          <p class="meta">110 г · порция</p>
-          <p class="price">180 ₽</p>
-          <p class="buffet">&nbsp;</p>
-        </article>
+    <table class="catalog">
+      <tr>
+        <td class="item">
+          <img class="photo" src="photos/cropped/01-basque-cheesecake.jpg" alt="Баскский чизкейк">
+          <div class="tag">бестселлер</div>
+          <div class="name">Баскский чизкейк</div>
+          <div class="desc">Карамельная корочка и&nbsp;шелковистая начинка — классика к&nbsp;кофе</div>
+          <div class="price-line"><span class="weight">110 г</span><span class="price">180 ₽</span></div>
+        </td>
+        <td class="item">
+          <img class="photo" src="photos/cropped/02-medovik.jpg" alt="Медовик">
+          <div class="tag">хит витрины</div>
+          <div class="name">Медовик</div>
+          <div class="desc">Тонкие медовые коржи и&nbsp;нежный крем — вкус, знакомый каждому</div>
+          <div class="price-line"><span class="weight">120 г</span><span class="price">180 ₽</span></div>
+          <div class="buffet">фуршет 30 г — 120 ₽/шт</div>
+        </td>
+        <td class="item">
+          <img class="photo" src="photos/cropped/03-ptichka.jpg" alt="Армянская птичка">
+          <div class="tag">для фуршета</div>
+          <div class="name">Армянская птичка</div>
+          <div class="desc">Воздушные коржи, крем и&nbsp;глянцевый шоколад — эффект на&nbsp;меню</div>
+          <div class="price-line"><span class="weight">120 г</span><span class="price">160 ₽</span></div>
+          <div class="buffet">фуршет 30 г — 120 ₽/шт</div>
+        </td>
+      </tr>
+    </table>
 
-        <article class="item">
-          <div class="photo-wrap">
-            <img src="photos/cropped/02-medovik.jpg" alt="Медовик">
-          </div>
-          <h2 class="name">Медовик</h2>
-          <p class="meta">120 г · порция</p>
-          <p class="price">180 ₽</p>
-          <p class="buffet">(фуршет: 30 г — 120 ₽/шт)</p>
-        </article>
+    <div class="mid">
+      <strong>Фуршетный формат 30&nbsp;г</strong> — медовик и птичка для кейтеринга и банкетов, без нарезки на месте
+    </div>
 
-        <article class="item">
-          <div class="photo-wrap">
-            <img src="photos/cropped/03-ptichka.jpg" alt="Армянская птичка">
-          </div>
-          <h2 class="name">Армянская птичка</h2>
-          <p class="meta">120 г · порция</p>
-          <p class="price">160 ₽</p>
-          <p class="buffet">(фуршет: 30 г — 120 ₽/шт)</p>
-        </article>
-      </div>
+    <table class="bottom-row">
+      <tr>
+        <td class="spacer"></td>
+        <td class="item">
+          <img class="photo" src="photos/cropped/04-meringue-roll.jpg" alt="Меренговый рулет">
+          <div class="tag">лёгкий десерт</div>
+          <div class="name">Меренговый рулет</div>
+          <div class="desc">Хрустящая меренга, крем и&nbsp;ягоды — яркий акцент на&nbsp;витрине</div>
+          <div class="price-line"><span class="weight">120 г</span><span class="price">160 ₽</span></div>
+        </td>
+        <td class="item">
+          <img class="photo" src="photos/cropped/05-carrot-cake.jpg" alt="Морковный торт">
+          <div class="tag">домашний вкус</div>
+          <div class="name">Морковный торт</div>
+          <div class="desc">Пряные коржи и&nbsp;сливочный крем — уютный десерт с&nbsp;высокой маржой</div>
+          <div class="price-line"><span class="weight">120 г</span><span class="price">180 ₽</span></div>
+        </td>
+        <td class="spacer"></td>
+      </tr>
+    </table>
 
-      <div class="row">
-        <article class="item">
-          <div class="photo-wrap">
-            <img src="photos/cropped/04-meringue-roll.jpg" alt="Меренговый рулет">
-          </div>
-          <h2 class="name">Меренговый рулет</h2>
-          <p class="meta">120 г · порция</p>
-          <p class="price">160 ₽</p>
-          <p class="buffet">&nbsp;</p>
-        </article>
-
-        <article class="item">
-          <div class="photo-wrap">
-            <img src="photos/cropped/05-carrot-cake.jpg" alt="Морковный торт">
-          </div>
-          <h2 class="name">Морковный торт</h2>
-          <p class="meta">120 г · порция</p>
-          <p class="price">180 ₽</p>
-          <p class="buffet">&nbsp;</p>
-        </article>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <p class="note">
-        <strong>Условия:</strong> цены указаны за порцию при оптовом заказе.
-        Медовик и армянская птичка также доступны в фуршетном формате (30 г).
-      </p>
-      <div class="contact">
-        <div class="label">Контакты</div>
-        <div>kisura · Москва</div>
-      </div>
+    <footer class="cta">
+      <table class="cta-table">
+        <tr>
+          <td>
+            <div class="cta-title">Поставьте на витрину — гости вернутся за тем же вкусом</div>
+            <div class="cta-text">
+              Цены за порцию при оптовом заказе. Медовик и птичка доступны в фуршетном формате 30&nbsp;г —
+              удобно для кейтеринга и банкетов. Напишите — подберём ассортимент под ваш формат.
+            </div>
+          </td>
+          <td class="right">
+            <div class="cta-label">Связаться</div>
+            <div class="cta-brand">Kisura</div>
+            <div class="cta-place">Москва · опт</div>
+          </td>
+        </tr>
+      </table>
     </footer>
   </div>
 </body>
