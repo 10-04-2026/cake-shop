@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gala table card — A6 print</title>
+  <style>
+    @page {
+      size: A6 portrait;
+      margin: 0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #2a181c;
+      color: #f3e8dc;
+      min-height: 100vh;
+    }
+
+    .toolbar {
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .toolbar p { font-size: 0.9rem; opacity: 0.85; }
+
+    button {
+      appearance: none;
+      border: 1px solid #d4a574;
+      background: #5c2433;
+      color: #f3e8dc;
+      padding: 0.65rem 1.1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .sheet-wrap {
+      display: grid;
+      place-items: center;
+      padding: 1rem 1rem 2rem;
+    }
+
+    /* A6 = 105 × 148 mm */
+    .sheet {
+      width: 105mm;
+      height: 148mm;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .sheet img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .toolbar { display: none !important; }
+      .sheet-wrap { padding: 0; }
+      .sheet {
+        width: 105mm;
+        height: 148mm;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <p>Формат <strong>A6</strong> (105×148 мм) · File → Print · поля: нет · масштаб 100%</p>
+    <button type="button" onclick="window.print()">Печать</button>
+  </div>
+  <div class="sheet-wrap">
+    <div class="sheet">
+      <img src="./gala-table-card-A6-300dpi.jpg" alt="Gala's birthday table card A6">
+    </div>
+  </div>
+</body>
+</html>
